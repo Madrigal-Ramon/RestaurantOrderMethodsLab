@@ -50,7 +50,7 @@ public class RestaurantOrder {
     }
  
     // Overloaded method to apply a discount
-    public static double calculateTotal(double totalCost) {
+    public static double calculateTotal(double totalCost, Scanner scanner) {
         System.out.println("Do you have a discount? (yes/no): ");
         String discountResponse = scanner.next();
         if (discountResponse.equalsIgnoreCase("yes")) {
