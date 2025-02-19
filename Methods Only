@@ -13,8 +13,18 @@ public class RestaurantOrder {
  
     // Method to get the price of an item based on selection
     public static double getItemPrice(int itemNumber) {
-        // TODO: Implement logic to return the price based on itemNumber
+        if (itemNumber == 1. Burger){
+             return 5.99;
+        } else if (itemNumber == 2. Pizza){
+             return 8.99;
+        } else if (itemNumber == 3. Salad){
+             return 4.99;
+        } else if (itemNumber == 4. Soda){
+             return 1.99;
+        } else {
+        System.out.println("Invalid number please enter a valid menu number.");
         return 0.0;
+        }
     }
  
     // Method to take an order from the user
@@ -27,22 +37,35 @@ public class RestaurantOrder {
         while (true) {
             int choice = scanner.nextInt();
             if (choice == 0) break;
-            
-            // TODO: Call getItemPrice() and update totalCost
+           
+            double itemPrice = getItemPrice(choice);
+            if (itemPrice > 0){
+                totalCost += itemPrice;
+                System.out.println("Item added. Current total is: $" + totalCost);
+            }
         }
  
-        // TODO: Display total cost
+        System.out.println("Your total cost is: $" + totalCost);
+        applyDiscount(totalCost, scanner);
     }
  
     // Overloaded method to apply a discount
     public static double calculateTotal(double totalCost) {
-        // TODO: Implement method to return total cost
+        System.out.println("Do you have a discount? (yes/no): ");
+        String discountResponse = scanner.next();
+        if (discountResponse.equalsIgnoreCase("yes")) {
+            System.out.println("Enter discount percentage (ex, 10 for 10%): ");
+            double discount = scanner.nextDouble();
+            double finalCost = calculateTotal(totalCost, discount);
+            System.out.println("Total cost after discount: $" + finalCost);
+        } else {
+            System.out.println("Total cost: $" + calculateTotal(totalCost));
+        }
         return totalCost;
     }
  
     public static double calculateTotal(double totalCost, double discount) {
-        // TODO: Implement method to return total cost after discount
-        return totalCost;
+        return totalCost * (1 - discount / 100);
     }
  
     // Main method to run the program
@@ -51,4 +74,5 @@ public class RestaurantOrder {
         takeOrder();
     }
 }
+ 
  
