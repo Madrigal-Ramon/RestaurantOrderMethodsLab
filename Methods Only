@@ -13,13 +13,13 @@ public class RestaurantOrder {
  
     // Method to get the price of an item based on selection
     public static double getItemPrice(int itemNumber) {
-        if (itemNumber == 1. Burger){
+        if (itemNumber == 1){
              return 5.99;
-        } else if (itemNumber == 2. Pizza){
+        } else if (itemNumber == 2){
              return 8.99;
-        } else if (itemNumber == 3. Salad){
+        } else if (itemNumber == 3){
              return 4.99;
-        } else if (itemNumber == 4. Soda){
+        } else if (itemNumber == 4){
              return 1.99;
         } else {
         System.out.println("Invalid number please enter a valid menu number.");
